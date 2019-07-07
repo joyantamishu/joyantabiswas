@@ -2,6 +2,42 @@
   <link type="text/css" rel="stylesheet" href="./style.css">
 <title>End To End QoS</title> 
 </head> 
-<body> 
+<body>
+  <h2>JProvisioning quality of service (qos) in distributed storage</h2> 
+
+<table width="900"> 
+<tbody><tr> 
+
+<td width="600"> 
+<p>
+Quality of service or qos management plays a vital role to provide differentiated services to different users (clients/applications). 
+The service provider makes service level agreement (SLA) with the clients to guarantee the qos. 
+For example: the client makes a SLA with the service provider that, the response time will never exceeds 10 millisecond, for 99.99% of the packets. 
+In terms of network and storage, the QoS parameters could be delay, jitter, packet loss etc. and bandwidth, iops, etc. respectively.
+
+The networks qos is well defined in many protocol implementations (e.g. COS in 802.1Q and DSCP in layer 3 network). But providing qos in a distributed storage system is difficult for a couple of reasons: 
+<ul class="paddedList">
+  <li>
+    The semantic gap between the file level (host side) and the block level information (storage side), there is little/no relation between the semantics.
+For example: it is not possible to find an association between the blocks to file or block to applications. So without additional management, storage servers/block devices can not guarantee the qos defined by the application.
+  </li>
+  <li>
+    Network plays a vital role to ensure the end to end qos, for example, a network switch queued up all the requests and follow FIFO! That could be devastating for a delay sensitive applications. 
+  </li>
+  <li>
+    Different application qos requirement might conflict and might cause noisy neighbour kind of situation for other applications.
+  </li>
+</ul>
+  In this work, we try to address the three issues mentioned here.
+</p>
+
+</td>
+ 
+<td> 
+	<img class="mug" width="240px" src="./joyanta_files/daniel.jpg" alt="Daniel Fried"> 
+</td> 
+
+</tr> 
+</tbody></table> 
 </body>
 </html>
