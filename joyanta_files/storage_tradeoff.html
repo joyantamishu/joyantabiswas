@@ -10,28 +10,25 @@
 
 <td width="600"> 
 <p>
-
-
-
-Storage systems are evolving rapidly from the slow spinning magnetic media to high-speed flash technologies (i.e., NVMe SSDs, Intel Optane etc) and even higher speed technologies NVM technologies (e.g., PCM, MRAM, etc.), which can rival DRAM access latencies. Alongside there have been rapid developments in storage access protocols that are much leaner and lower in latency (e.g., the NVMe protocol that is rapidly becoming ubiquitous). 
+Storage systems are evolving rapidly from the slow spinning magnetic media to high-speed flash technologies (i.e., NVMe SSDs, Intel Optane etc) and even higher speed technologies NVM technologies (e.g., PCM, MRAM, etc.), which can rival DRAM access latencies. Alongside there have been rapid developments in storage access protocols that are much leaner and lower in latency (e.g., the NVMe protocol that is rapidly becoming ubiquitous).
 As good as it sounds like, at the same time, this emerging technologies lead to some of the unforeseen phenomena:
 
 <ul>
   <li>
-    The collective throughput of the individual storage media can easily saturate the interconnect network capacity (Maximum available now a days 100 Gb/s ethernet). So, the interconnect network has become the bottleneck and makes it difficult to achive the desired performance, which was never the case earlier (in the era of spinning disk). 
+    The collective throughput of the individual storage media can easily saturate the interconnect network capacity (Maximum available now a days 100 Gb/s ethernet). So, the interconnect network has become the bottleneck and makes it difficult to achieve the desired performance, which was never the case earlier (in the era of spinning disk).
   </li>
   <li>
-    Based on the write amount, the lifetime of a SSDs decreases over time (P/E cycle). This would cause read and write latency to increase as time goes by, and as a result performance degradation. Wear leveling had never been an issue for the spinning disks. One can argue to replace the old SSDs and replace with a new one. But in a large data center infrastructure with high availablity and QoS, how feasible that solution is?   
-  </li> 
+    Based on the write amount, the lifetime of an SSD decreases over time (P/E cycle). This would cause read and write latency to increase as time goes by, and as a result performance degradation. Wear leveling had never been an issue for the spinning disks. One can argue to replace the old SSDs and replace with a new one. But in a large data center infrastructure with high availability and QoS, how feasible that solution is?   
+  </li>
   <li>
-     Background jobs in SSDs (trimming, gurbage collection etc) make it hard to ensure QoS, since during the background job, the entire plane is blocked to do any I/O. For example, what will happen if any job has high availablity QoS requirement needs data and those background job is running at that time? To ensure the certainly, concept of determinitic and non-deterministic window has been <a href = "https://www.snia.org/sites/default/files/SDCEMEA/2018/Presentations/Achieving-Predictable-Latency-Solid-State-Storage-SSD-SNIA-SDC-EMEA-2018.pdf">proposed</a>. Leveraging this device
-     feature can lead to better QoS management. 
+     Background jobs in SSDs (trimming, garbage collection etc) make it hard to ensure QoS, since during the background job, the entire plane is blocked to do any I/O. For example, what will happen if any job has high availability QoS requirement needs data and those background job is running at that time? To ensure the certainly, concept of determinitic and non-deterministic window has been <a href = "https://www.snia.org/sites/default/files/SDCEMEA/2018/Presentations/Achieving-Predictable-Latency-Solid-State-Storage-SSD-SNIA-SDC-EMEA-2018.pdf">proposed</a>. Leveraging this device feature can lead to better QoS management.
   </li>
 </ul>
 
 In this work, we try to address the three issues mentioned above. This work mainly focuses on both the NVME over Fabrics (nvme-of)
-and Persistent memory over Fabrics (pm-of) protocol, and different QoS requirement by different applications, running over those 
+and Persistent memory over Fabrics (pm-of) protocol, and different QoS requirement by different applications, running over those
 protocols.
+
 </p>
 </td>
  
