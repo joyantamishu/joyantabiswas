@@ -1,1 +1,45 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><style id="stndz-style"></style> 
+  <link type="text/css" rel="stylesheet" href="./style.css">
+<title>End To End QoS</title> 
+</head> 
+<body>
+  <h2>Tradeoff management in emerging Storage technologies</h2> 
+
+<table width="900"> 
+<tbody><tr> 
+
+<td width="600"> 
+<p>
+
+Storage systems are evolving rapidly from the slow spinning magnetic media to high-speed flash technologies (i.e., NVMe SSDs, Intel Optane etc) and even higher speed technologies NVM technologies (e.g., PCM, MRAM, etc.), which can
+rival DRAM access latencies. Alongside there have been rapid developments in storage access protocols that are much leaner and lower in latency (e.g., the NVMe protocol that is rapidly becoming ubiquitous). As good as it sounds like, 
+at the same time, this emerging technologies lead to address some of the unforeseen phenomena:
+<ul>
+  <li>
+    The semantic gap between the file level (host side) and the block level information (storage side), there is little/no relation between the semantics.
+For example: it is not possible to find an association between the blocks to file or block to applications. So without additional management, storage servers/block devices can not guarantee the qos defined by the application.
+  </li>
+  <li>
+    Network plays a vital role to ensure the end to end qos, for example, a network switch queued up all the requests and follow FIFO! That could be devastating for a delay sensitive applications. 
+  </li>
+  <li>
+    Different application qos requirement might conflict and might cause <a href="https://www.flashmemorysummit.com/English/Collaterals/Proceedings/2017/20170809_SIT6_Petersen.pdf">noisy neighbour</a> kind of situation for other applications. Besides that, 
+    what additional parameters/features are needed to achieve a consistent and yet flexible end to end QoS implementation?
+  </li>
+</ul>
+	
+  In this work, we try to address the three issues mentioned above. This work mainly focuses on both the NVME over Fabrics (nvme-of)
+and Persistent memory over Fabrics (pm-of) protocol, and different QoS requirement by different applications, running over those 
+protocols.
+</p>
+</td>
+ 
+<td> 
+	
+</td> 
+
+</tr> 
+</tbody></table> 
+</body>
+</html>
 
