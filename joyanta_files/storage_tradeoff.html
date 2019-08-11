@@ -12,16 +12,16 @@
 <p>
 
 
-Storage systems are evolving rapidly from the slow spinning magnetic media to high-speed flash technologies (i.e., NVMe SSDs, Intel Optane etc) and even higher speed technologies NVM technologies (e.g., PCM, MRAM, etc.), which can rival DRAM access latencies. Alongside there have been rapid developments in storage access protocols that are much leaner
-and lower in latency (e.g., the NVMe protocol that is rapidly becoming ubiquitous). As good as it sounds like, at the same time, this emerging technologies lead to some of the unforeseen phenomena:
+
+Storage systems are evolving rapidly from the slow spinning magnetic media to high-speed flash technologies (i.e., NVMe SSDs, Intel Optane etc) and even higher speed technologies NVM technologies (e.g., PCM, MRAM, etc.), which can rival DRAM access latencies. Alongside there have been rapid developments in storage access protocols that are much leaner and lower in latency (e.g., the NVMe protocol that is rapidly becoming ubiquitous). 
+As good as it sounds like, at the same time, this emerging technologies lead to some of the unforeseen phenomena:
 
 <ul>
   <li>
-    The collective throughput of the individual storage media can easily saturate the interconnect network capacity (Maximum available now a days 100 Gb/s ethernet). So, the interconnect network would    	become the bottleneck and makes it difficult to achive the desired performance, which was never the case earlier (in the era of spinning disk). 
+    The collective throughput of the individual storage media can easily saturate the interconnect network capacity (Maximum available now a days 100 Gb/s ethernet). So, the interconnect network has become the bottleneck and makes it difficult to achive the desired performance, which was never the case earlier (in the era of spinning disk). 
   </li>
   <li>
-    Based on the amount of write done on SSDs, the lifetime of a SSDs decreases over time (P/E cycle). This would cause read and write latency to increase as time goes by, and as a result performance     degradation. Wear leveling had never been an issue for the spinning disks. One can argue to replace the old SSDs and replace with a new one. 
-    But in a large data center infrastructure with high availablity and QoS, how feasible that solution is?   
+    Based on the write amount, the lifetime of a SSDs decreases over time (P/E cycle). This would cause read and write latency to increase as time goes by, and as a result performance degradation. Wear leveling had never been an issue for the spinning disks. One can argue to replace the old SSDs and replace with a new one. But in a large data center infrastructure with high availablity and QoS, how feasible that solution is?   
   </li> 
   <li>
     Different application qos requirement might conflict and might cause <a href="https://www.flashmemorysummit.com/English/Collaterals/Proceedings/2017/20170809_SIT6_Petersen.pdf">noisy neighbour</a> kind of situation for other applications. Besides that, 
