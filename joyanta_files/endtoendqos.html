@@ -15,7 +15,7 @@ The service provider makes service level agreement (SLA) with the clients to gua
 For example: the client makes a SLA with the service provider that, the response time will never exceeds 10 millisecond, for 99.99% of the packets. 
 In terms of network and storage, the QoS parameters could be delay, jitter, packet loss etc. and bandwidth, iops, etc. respectively.
 
-The networks qos is well defined in many protocol implementations (e.g. COS in 802.1Q and DSCP in layer 3 network), it has several limitations in the data center context. First, DSCP was developed for WAN and is based on packet loss characteristics. In data centers, packet loss is highly undesirable as it can cause the applications to hang or severly degrade their performance.  Second, DSCP provides a hop-by-hop control wherein each switch along the path marks the packets according to the supplied policies. Instead, what is needed is an end-to-end mechanism that can be managed from the service endpoints. Third, the data center is not limited to layer-2 switches, and routinely uses switches with layer-3 (or routing) capabilities. Thus, an Ethernet level QoS is itself insufficient. Also, while the data center bridging features (e.g., PFC -- priority flow control, ETS -- Enhanced transmission selection) are well standardized and can be very useful, they are generally not implemented. 
+The networks qos is well defined in many protocol implementations (e.g. COS in 802.1Q and DSCP in layer 3 network), it has several limitations in the data center context. First, DSCP was developed for WAN and is based on packet loss characteristics. In data centers, packet loss is highly undesirable as it can cause the applications to hang or severly degrade their performance.  Second, DSCP provides a hop-by-hop control wherein each switch along the path marks the packets according to the supplied policies. Instead, what is needed is an end-to-end mechanism that can be managed from the service endpoints. Third, the data center is not limited to layer-2 switches, and routinely uses switches with layer-3 (or routing) capabilities. Thus, an Ethernet level QoS is itself insufficient. 
 Providing end to end qos in a distributed storage system is difficult for a couple of reasons: 
 <ul>
   <li>
@@ -23,11 +23,7 @@ Providing end to end qos in a distributed storage system is difficult for a coup
 For example: it is not possible to find an association between the blocks to file or block to applications. So without additional management, storage servers/block devices can not guarantee the qos defined by the application.
   </li>
   <li>
-    Network plays a vital role to ensure the end to end qos, for example, a network switch queued up all the requests and follow FIFO! That could be devastating for a delay sensitive applications. 
-  </li>
-  <li>
-    Different application qos requirement might conflict and might cause <a href="https://www.flashmemorysummit.com/English/Collaterals/Proceedings/2017/20170809_SIT6_Petersen.pdf">noisy neighbour</a> kind of situation for other applications. Besides that, 
-    what additional parameters/features are needed to achieve a consistent and yet flexible end to end QoS implementation?
+    Network plays a vital role to ensure the end to end qos, for example, a network switch queued up all the requests and follow FIFO! That could be devastating for a delay sensitive applications.
   </li>
   <li>
     One may argue different Data center bridging (DCB) solution can be useful in order to provide differtiated service to different applications. But the problems are multifold. 1) Tagging the IO request with the network semantics, 2) Manual configuration of the network resources, 3) Consistent monitoring of the performance and network resources in order to set the paramters correctly, etc.
